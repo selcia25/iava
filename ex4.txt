@@ -1,0 +1,5 @@
+python train.py --img 640 --batch 16 --epochs 50 --data ../datasets/data.yaml --cfg models/yolov5s.yaml --weights yolov5s.pt --name object
+
+python val.py --data ../datasets/data.yaml --weights runs/train/object/weights/best.pt --img 640
+
+python detect.py --weights runs/train/object/weights/best.pt --img 640 --conf 0.25 --source 0
